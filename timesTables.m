@@ -100,7 +100,7 @@ xlim([-1.1 1.1]*radius)
 ylim([-1.1 1.1]*radius)
 % Plot the circle
 a = linspace(0, 2*pi, 360*numberOfPoints);	% Assign Angle Vector
-xVec = X + radius.*cos(a);                  % Circle â€˜xâ€™ Vector
+xVec = X + radius.*cos(a);                  % Circle ‘x’ Vector
 yVec = Y + radius.*sin(a);  
 % plot(xVec, yVec, 'color', [0 0 0])        % Plot Circle
 % Set the axis aspect ratio to 1:1
@@ -179,7 +179,6 @@ for iLines = 1:numberOfPoints
         yVec(pointIndices(pointsVecEnd(iLines)))], '-', 'Color', lineColor(iLines,:));
     hPlot.Color(4) = alphaValue(iLines);% Modify line opacity
 end
-
 %% Plot points
 if ~isnan(pointColor)
 %     hPoint = plot(xVec(pointIndices), yVec(pointIndices), '.', 'Color', pointColor);
