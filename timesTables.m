@@ -37,7 +37,7 @@ function hFig = timesTables(multiplier, numberOfPoints, varargin)
 % https://www.youtube.com/watch?v=knAzjnM3koo
 % https://www.youtube.com/watch?v=qhbuKbxJsk8
 % ______________________________________________________________________________
-% Copyright (C) 2019 Edgar Guevara, PhD
+% Copyright (C) 2019 Edgar Guevara, PhD 
 % ______________________________________________________________________________
 %% Handle optional inputs 
 % only want 1 optional input at most
