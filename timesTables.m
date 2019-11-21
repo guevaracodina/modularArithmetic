@@ -179,6 +179,7 @@ for iLines = 1:numberOfPoints
         yVec(pointIndices(pointsVecEnd(iLines)))], '-', 'Color', lineColor(iLines,:));
     hPlot.Color(4) = alphaValue(iLines);% Modify line opacity
 end
+
 %% Plot points
 if ~isnan(pointColor)
 %     hPoint = plot(xVec(pointIndices), yVec(pointIndices), '.', 'Color', pointColor);
