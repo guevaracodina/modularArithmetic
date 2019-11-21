@@ -1,0 +1,9 @@
+ # Disable line break normalization for all files
+
+ * -text
+
+ # You can also customize this based on the file type, by using something like
+ # this:
+ # *.css text
+ # *.js  text
+ # *.csv -text
