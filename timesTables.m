@@ -55,8 +55,8 @@ optArgs = {[1 1 1], 0.25, 'solid', NaN, true};
 optArgs(1:numVarArgs) = varargin;
 
 % Place optional args in memorable variable names
-lineColor       = optArgs{1}; 
-alphaValue      = optArgs{2}; 
+lineColor       = optArgs{1};
+alphaValue      = optArgs{2};
 colorMethod     = optArgs{3};
 pointColor      = optArgs{4};
 darkBackground  = optArgs{5};
