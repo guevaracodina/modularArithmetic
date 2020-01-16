@@ -39,7 +39,7 @@ function hFig = timesTables(multiplier, numberOfPoints, varargin)
 % ______________________________________________________________________________
 % Copyright (C) 2019 Edgar Guevara, PhD 
 % ______________________________________________________________________________
-%% Handle optional inputs 
+% Handle optional inputs
 % only want 1 optional input at most
 numVarArgs = length(varargin);
 if numVarArgs > 5
@@ -72,7 +72,7 @@ elseif alphaValue < 0
     alphaValue = 0;
 end
 
-%% Create or re-use figure 
+% Create or re-use figure
 g = groot;
 % True if there are no open graphics objects, false otherwise
 if isempty(g.Children) 
@@ -89,7 +89,7 @@ else
 end
 hold on
 
-%% Compute modular arithmetic 
+% Compute modular arithmetic
 % Define center and radius
 X = 0; Y = 0;
 radius = 1;
@@ -126,7 +126,7 @@ else
     lineColor = lineColor_interp;
 end
 
-%% Create colormap and transparency 
+% Create colormap and transparency
 % Color method
 switch(colorMethod)
     case 'solid'
@@ -170,7 +170,7 @@ switch(colorMethod)
         lineColor = hsv(numberOfPoints);
 end
         
-%% Plot lines 
+% Plot lines
 for iLines = 1:numberOfPoints
     % Plot Lines
     hPlot = plot([xVec(pointIndices(pointsVecBegin(iLines))), ...
@@ -180,14 +180,14 @@ for iLines = 1:numberOfPoints
     hPlot.Color(4) = alphaValue(iLines);% Modify line opacity
 end
 
-%% Plot points 
+% Plot points
 if ~isnan(pointColor)
 %     hPoint = plot(xVec(pointIndices), yVec(pointIndices), '.', 'Color', pointColor);
     plot(xVec(pointIndices), yVec(pointIndices), '.', 'Color', pointColor);
 end
 % hPoint.Color(4) = alphaValue;         % Does not change transparency...
 
-%% Add title 
+% Add title
 if darkBackground
     title(sprintf('%gx, N=%d', multiplier, numberOfPoints), ...
         'Color', [1 1 1])               % White letters
