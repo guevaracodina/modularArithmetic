@@ -81,6 +81,7 @@ if isempty(g.Children)
 else
     hFig = figure(gcf);
 end
+set(gca,'nextplot','replacechildren'); 
 if darkBackground
     set(hFig, 'color', 'k')         % Black background
     set(hFig, 'InvertHardcopy', 'off')
@@ -178,6 +179,7 @@ for iLines = 1:numberOfPoints
         [yVec(pointIndices(pointsVecBegin(iLines))), ...
         yVec(pointIndices(pointsVecEnd(iLines)))], '-', 'Color', lineColor(iLines,:));
     hPlot.Color(4) = alphaValue(iLines);% Modify line opacity
+    hPlot.LineWidth = 1.5;
 end
 
 %% Plot points
@@ -186,15 +188,16 @@ if ~isnan(pointColor)
     plot(xVec(pointIndices), yVec(pointIndices), '.', 'Color', pointColor);
 end
 % hPoint.Color(4) = alphaValue;         % Does not change transparency...
-
+myFontSize = 14;
 % Add title
 if darkBackground
-    title(sprintf('%gx, N=%d', multiplier, numberOfPoints), ...
-        'Color', [1 1 1])               % White letters
+    titleColor = [1 1 1];               % White letters
 else
-    title(sprintf('%gx, N=%d', multiplier, numberOfPoints), ...
-        'Color', [0 0 0])               % Black letters
+    titleColor = [0 0 0];               % Black letters
 end
+title(sprintf('%gx, N=%d', multiplier, numberOfPoints), ...
+        'Color', titleColor, 'FontSize', myFontSize)               
+text(0.5, -1, '(C) 2020 Edgar Guevara, PhD', 'FontSize', myFontSize, 'Color', titleColor)
 drawnow()                               % Refresh
 end
 
